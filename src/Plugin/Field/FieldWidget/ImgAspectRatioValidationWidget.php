@@ -93,7 +93,7 @@ class ImgAspectRatioValidationWidget extends ImageWidget {
     $element = parent::formElement($items, $delta, $element, $form, $formState);
     $fieldSettings = $this->getFieldSettings();
     if (isset($fieldSettings['aspect_ratio'])) {
-      $element['#upload_validators']['file_validate_image_aspect_ratio_validation'] = [$fieldSettings['aspect_ratio']];
+      $element['#upload_validators']['img_aspect_ratio_validation_image_file'] = [$fieldSettings['aspect_ratio']];
     }
     return $element;
   }

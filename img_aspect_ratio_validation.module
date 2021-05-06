@@ -20,18 +20,18 @@ use Drupal\file\FileInterface;
  * @return array
  *   containing the error message will be returned.
  */
-function file_validate_image_aspect_ratio_validation(FileInterface $file, $aspect_ratio = '') {
+function img_aspect_ratio_validation_image_file(FileInterface $file, $aspect_ratio = '') {
   $image_factory = \Drupal::service('image.factory');
   $image = $image_factory->get($file->getFileUri());
   if ($image->isValid()) {
-    if (isset($aspect_ratio) && !empty($aspect_ratio)) {
+    if (!empty($aspect_ratio)) {
       list($width, $height) = explode(':', $aspect_ratio);
       $x = number_format((float) ($width / $height), 2, '.', '');
       $y = number_format((float) ($image->getWidth() / $image->getHeight()), 2, '.', '');
       if ($x != $y) {
         $errors[] = t('The given image aspect ratio %$y not matching with actual aspect ratio %$x',
         [
-          '%$y' => calculate_ratio($image->getWidth(), $image->getHeight()),
+          '%$y' => img_aspect_ratio_validation_calculate_ratio($image->getWidth(), $image->getHeight()),
           '%$x' => $aspect_ratio,
         ]);
         return $errors;
@@ -51,7 +51,7 @@ function file_validate_image_aspect_ratio_validation(FileInterface $file, $aspec
  * @return string
  *   containing aspect ratio
  */
-function calculate_ratio($a, $b) {
+function img_aspect_ratio_validation_calculate_ratio($a, $b) {
   $gcd = '';
   $gcd = function ($a, $b) use (&$gcd) {
     return ($a % $b) ? $gcd($b, $a % $b) : $b;
