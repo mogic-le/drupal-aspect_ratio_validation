@@ -5,7 +5,21 @@
  * Contains main functions and hooks for img_aspect_ratio_validation module.
  */
 
+use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\file\FileInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ogilvy_cloudflare_cache_purge_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.img_aspect_ratio_validation':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module helps us to validate the image based on the aspect ratio configured againest the image field.') . '</p>';
+      return ['#markup' => $output];
+  }
+}
 
 /**
  * Verifies that image aspect ratio as per the configurable values.

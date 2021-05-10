@@ -39,8 +39,7 @@ Current maintainers:
  
 This project has been sponsored by:
  * PennyWise Solutions Private Limited
-   Specialized in consulting and planning of Drupal powered sites, 
-   PennyWise Solutions Private Limited offers installation, development, theming,
-   customization, and hosting to get you started.
-   Visit https://www.unleashedmind.com for more information.
-
+   Specialized in consulting and planning of Drupal powered sites,
+   PennyWise Solutions Private Limited offers installation, development,
+   theming,customization, and hosting to get you started.
+   Visit https://www.pennywisesolutions.com for more information.
