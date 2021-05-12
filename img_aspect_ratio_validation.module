@@ -11,7 +11,7 @@ use Drupal\file\FileInterface;
 /**
  * Implements hook_help().
  */
-function ogilvy_cloudflare_cache_purge_help($route_name, RouteMatchInterface $route_match) {
+function img_aspect_ratio_validation_help($route_name, RouteMatchInterface $route_match) {
   switch ($route_name) {
     case 'help.page.img_aspect_ratio_validation':
       $output = '';
