@@ -35,6 +35,7 @@ function img_aspect_ratio_validation_help($route_name, RouteMatchInterface $rout
  *   containing the error message will be returned.
  */
 function img_aspect_ratio_validation_image_file(FileInterface $file, $aspect_ratio = '') {
+  $errors = [];
   $image_factory = \Drupal::service('image.factory');
   $image = $image_factory->get($file->getFileUri());
   if ($image->isValid()) {
@@ -48,10 +49,10 @@ function img_aspect_ratio_validation_image_file(FileInterface $file, $aspect_rat
           '%$y' => img_aspect_ratio_validation_calculate_ratio($image->getWidth(), $image->getHeight()),
           '%$x' => $aspect_ratio,
         ]);
-        return $errors;
       }
     }
   }
+  return $errors;
 }
 
 /**
