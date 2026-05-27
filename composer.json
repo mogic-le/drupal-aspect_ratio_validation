@@ -1,0 +1,11 @@
+{
+    "name": "drupal/aspect_ratio_validation",
+    "description": "Validate uploaded images based on the aspect ratio configured for the image field.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.1",
+        "drupal/core": "^8 || ^9 || ^10"
+    }
+}
